@@ -23,7 +23,9 @@ class Samba < Formula
                             "--prefix=#{prefix}",
                             "--with-configdir=#{prefix}/etc",
                             "--without-ldap",
-                            "--without-krb5"
+                            "--without-krb5",
+                            "--with-smbmount",
+                            "--with-cifsmount"
       system "make install"
       (prefix/'etc').mkpath
       touch prefix/'etc/smb.conf'
